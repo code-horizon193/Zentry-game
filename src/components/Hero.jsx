@@ -20,7 +20,7 @@ const Hero = () => {
   const [loading, setloading] = useState(true);
   const [HasClicked, setHasClicked] = useState(false);
   const videoRef = useRef(null);
-  const changAudio = useRef(new Audio("/audio/swap.wav"));
+  const changAudio = useRef(new Audio("audio/swap.wav"));
   changAudio.current.preload = "auto";
   const total = 4;
 
@@ -54,7 +54,8 @@ const Hero = () => {
           width: "100%",
           height: "100%",
           duration: 1,
-          ease: "power2.inOut",
+          scale: 1,
+          ease: "power1.inOut",
           onStart: () => videoRef.current.play(),
         });
         gsap.from("#current-video", {
@@ -106,7 +107,7 @@ const Hero = () => {
   }, [currentVideo]);
 
   //   video source by video index
-  const videoSrc = (index) => `/videos/hero-${index}.mp4`;
+  const videoSrc = (index) => `videos/hero-${index}.mp4`;
   return (
     <div className="w-screnn min-h-dvh relative overflow-x-hidden rounded-md">
       {loading && (
@@ -151,7 +152,7 @@ const Hero = () => {
             autoPlay
             loop
             muted
-            className="absolute-center size-64 rounded-lg z-20 object-center origin-center object-cover opacity-0"
+            className="absolute-center size-64 rounded-lg z-20 object-center origin-center object-cover invisible"
             onLoadedData={HandleLoadedVideo}
           />
           <video

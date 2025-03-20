@@ -6,7 +6,7 @@ import MoveImg from "./MoveImg";
 const LatestUpdate = () => {
   return (
     <div className="w-screen min-h-dvh relative">
-      <div className="container mx-auto my-12 px-3.5 md:px-10 gap-6 lg:px-28">
+      <div className="my-12 px-3.5 md:px-10 gap-6 lg:px-28">
         <div className="h-full w-full flex justify-between items-start py-5 md:text-start flex-wrap md:flex-nowrap">
           <div className="mr-7">
             <h2 className="special-font font-black text-[7rem] leading-22 font-zentry self-start">
@@ -31,8 +31,8 @@ const LatestUpdate = () => {
             <div className="flex flex-col gap-7 items-start md:ms-0 ms-20">
 
               <MoveImg
-                className="lg:w-lg sm:w-md w-xs rounded-xl overflow-hidden lg:h-80 h-72"
-                src="/img/news-1.jpg"
+                className="lg:w-lg sm:w-md w-80 rounded-xl overflow-hidden lg:h-80 h-72"
+                src="img/news-1.jpg"
               />
 
               <div className="flex items-start">
@@ -50,7 +50,7 @@ const LatestUpdate = () => {
             <div className="flex mt-14  md:mt-10 flex-col gap-7 items-start">
 
               <MoveImg
-                src="/img/news-2.png"
+                src="img/news-2.png"
                 className="lg:w-lg w-md rounded-xl overflow-hidden lg:h-80 h-72"
               />
 

@@ -16,12 +16,12 @@ const Contact = () => {
       <div className="bg-black relative rounded-lg py-24 sm:overflow-hidden">
         <div className="absolute -left-20 top-0 h-full hidden sm:block overflow-hidden w-72 lg:left-20 lg:w-96">
           <ImgclipBox
-            src="/img/contact-1.webp"
+            src="img/contact-1.webp"
             clipPath="contact-clip-path-1 translate-x-2"
           />
 
           <ImgclipBox
-            src="/img/contact-2.webp"
+            src="img/contact-2.webp"
             clipPath="contact-clip-path-2 lg:translate-y-40 translate-y-60"
           />
         </div>
@@ -43,12 +43,12 @@ const Contact = () => {
 
         <div className="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
           <ImgclipBox
-            src="/img/swordman-partial.webp"
+            src="img/swordman-partial.webp"
             clipPath="md:scale-125 absolute"
           />
 
           <ImgclipBox
-            src="/img/swordman.webp"
+            src="img/swordman.webp"
             clipPath="md:scale-125 sword-man-clip-path"
           />
         </div>

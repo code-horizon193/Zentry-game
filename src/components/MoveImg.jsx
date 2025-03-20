@@ -29,10 +29,10 @@ const MoveImg = ({ src, className = "" }) => {
     <div
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => handleMouseMove}
+      // onMouseEnter={() => handleMouseMove}
       onMouseLeave={() => handleMouseLeave} 
-      onMouseUp={()=> handleMouseLeave}
-      className={className}
+      // onMouseUp={()=> handleMouseLeave} 
+      className={className} 
     >
       <div
         className="origin-center cursor-pointer overflow-hidden rounded-lg size-full"

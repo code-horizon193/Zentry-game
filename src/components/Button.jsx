@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 const Button = ({ title, id, leftIcon, rightIcon, styleClass }) => {
   
-  const audioRef = useRef(new Audio('/audio/btn.wav'));
+  const audioRef = useRef(new Audio('audio/btn.wav'));
   audioRef.current.preload = "auto";
   const mainShow = useRef(null);
   

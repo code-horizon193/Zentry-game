@@ -10,8 +10,8 @@ const Header = () => {
 
     const [isActive, setisActive] = useState(false);
     const [isAudioPlay, setisAudioPlay] = useState(false);
-    const audio = useRef(new Audio('/audio/link.wav'));
-    audio.current.preload = "auto";
+    const audio = useRef(new Audio('audio/link.wav'));
+    // audio.current.preload = "auto";
     const audioRef = useRef(null);
     const mainConatiner = useRef(null);
 
@@ -73,7 +73,7 @@ const Header = () => {
         <header className='px-5 w-full absolute top-1/2 -translate-y-1/2'>
             <nav className='w-full h-full flex items-center justify-between'>
                 <div className="flex items-center gap-5">
-                    <img src="/img/logo.png" alt="logo" className='size-10 rounded-full select-none cursor-pointer object-contain object-center' />
+                    <img src="img/logo.png" alt="logo" className='size-10 rounded-full select-none cursor-pointer object-contain object-center' />
                     <Button title="Products" id="product-button" rightIcon={<TiLocationArrow />} 
                     styleClass="flex gap-1 items-center" />
 
@@ -95,7 +95,7 @@ const Header = () => {
                             style={{animationDelay: `${chart * 0.12}s`}}
                             />
                         ))} 
-                        <audio ref={audioRef} loop src="/audio/main.mp3" />
+                        <audio ref={audioRef} loop src="audio/main.mp3" />
                     </button>
                 </div>
             </nav>

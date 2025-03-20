@@ -46,7 +46,7 @@ const About = () => {
         </div>
         <div className="h-dvh w-screen select-none" style={{perspective: '500px'}} id='clip-img'>
             <div className="mask-clip-path about-image">
-                <img src="/img/about.webp" alt='about background' className='size-full absolute top-0 left-0 object-cover ' />
+                <img src="img/about.webp" alt='about background' className='size-full absolute top-0 left-0 object-cover ' />
             </div>
         </div>
     </section>

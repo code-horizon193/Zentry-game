@@ -15,14 +15,14 @@ const FeatCard = ({ children, classContainer = "" }) => {
     const relativeX = (e.clientX - left) / width;
     const relativeY = (e.clientY - top) / height;
 
-    const rotatex = (relativeY - 0.5) * 11;
-    const rotatey = (relativeX - 0.5) * -11;
+    const rotatex = (relativeY - 0.5) * 5;
+    const rotatey = (relativeX - 0.5) * -5;
 
     const mainTransform = `perspective(700px) rotateX(${rotatex}deg) rotateY(${rotatey}deg) scale3d(.96, .96, .96)`;
     setnewTransform(mainTransform);
 
-    const shadowX = (relativeX * 2-1) * 20;
-    const shadowY = (relativeY * 2-1) * 20;
+    const shadowX = (relativeX * 2-1) * 15;
+    const shadowY = (relativeY * 2-1) * 15;
     const shadow = `${shadowX}px ${shadowY}px 32px #656fe24f `;
     setshadoBox(shadow)
   };
@@ -76,7 +76,7 @@ const CardVideo = ({ src, title, caption, isCommingSoon }) => {
 
       <div className="relative z-10 size-full flex flex-col justify-between py-5 px-6 text-violet-50">
         <div>
-          <h2 className="bento-title special-font cursor-text">{title}</h2>
+          <h2 className="bento-title w-fit special-font cursor-text">{title}</h2>
           <p className="mt-3 text-sm max-w-64 cursor-text md:text-base">{caption}</p>
         </div>
 
