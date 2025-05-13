@@ -1,6 +1,7 @@
-# React + Vite
-
-This was Made Using **React** && **Vite** ...
+<p align="center">
+  <span>🔗 Go Live: </span>
+  <a href="https://code-horizon193.github.io/Zentry-game/" target="_blank"> code-horizon193.github.io/Zentry-game</a>
+</p>
 
 ## <a name="introduction">✌ Introduction</a>
 
