@@ -21,28 +21,22 @@ const MoveImg = ({ src, className = "" }) => {
     setnewTransform(mainTransform);
   };
 
-  const handleMouseLeave = () => {
-    setnewTransform("");
-  };
-
   return (
     <div
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      // onMouseEnter={() => handleMouseMove}
-      onMouseLeave={() => handleMouseLeave} 
-      // onMouseUp={()=> handleMouseLeave} 
-      className={className} 
+      onMouseLeave={() => setnewTransform("")}
+      className={className}
     >
       <div
-        className="origin-center cursor-pointer overflow-hidden rounded-lg size-full"
+        className="origin-center cursor-pointer overflow-hidden rounded-lg size-full transition-transform duration-200 ease-in-out shadow-lg"
         style={{ transform: newTransform }}
       >
         <img
           src={src}
           alt={src}
-          className="size-full object-center object-cover" 
-          loading="lazy" 
+          className="size-full object-center object-cover"
+          loading="lazy"
         />
       </div>
     </div>

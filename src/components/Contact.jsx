@@ -35,7 +35,7 @@ const Contact = () => {
             title="let&#39;s b<b>u</b>ild the <br /> new era of
              <br /> 
              g<b>a</b>ming t<b>o</b>gether. "
-            className="!md:text-[6.2rem] w-full !text-center !text-5xl !font-black !leading-[.9]"
+            classContainer="!text-white !text-center"
           />
 
           <Button id="contact-us" title="contact us" styleClass="mt-8" />
@@ -58,3 +58,4 @@ const Contact = () => {
 };
 
 export default Contact;
+ 

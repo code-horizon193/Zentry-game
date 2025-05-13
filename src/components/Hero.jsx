@@ -4,6 +4,8 @@ import { TiLocationArrow } from "react-icons/ti";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import VideoPreview from "./VideoPreview";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +50,7 @@ const Hero = () => {
   useGSAP(
     () => {
       if (HasClicked) {
-        gsap.set("#next-video", { autoAlpha: 1});
+        gsap.set("#next-video", { autoAlpha: 1 });
         gsap.to("#next-video", {
           transformOrigin: "center center",
           width: "100%",
@@ -107,7 +109,18 @@ const Hero = () => {
   }, [currentVideo]);
 
   //   video source by video index
-  const videoSrc = (index) => `videos/hero-${index}.mp4`;
+  // const videoSrc = (index) => `videos/hero-${index}.mp4`;
+
+  const source = [
+    "videos/hero-1.mp4",
+    "videos/hero-2.mp4",
+    "videos/hero-3.mp4",
+    "videos/hero-4.mp4",
+  ];
+  const videoSrc = (index) => {
+    index --;
+    return source[index];
+  };
   return (
     <div className="w-screnn min-h-dvh relative overflow-x-hidden rounded-md">
       {loading && (
@@ -127,7 +140,7 @@ const Hero = () => {
         className="relative z-10 w-screen h-dvh overflow-hidden bg-blue-30"
       >
         <div>
-          <div className="mask-clip-path absolute-center z-50 size-64 cursor-pointer rounded-lg overflow-hidden">
+          <div className="mask-clip-path absolute-center z-50 size-64 cursor-pointer rounded-lg group">
             <VideoPreview>
               <div
                 className="size-64 scale-75 opacity-0 origin-center transition-all duration-500 hover:scale-125 hover:opacity-100"
@@ -141,6 +154,7 @@ const Hero = () => {
                   loop
                   className="size-64 object-center object-cover origin-center scale-150"
                   onLoadedData={HandleLoadedVideo}
+                  loading="lazy"
                 />
               </div>
             </VideoPreview>
@@ -154,14 +168,16 @@ const Hero = () => {
             muted
             className="absolute-center size-64 rounded-lg z-20 object-center origin-center object-cover invisible"
             onLoadedData={HandleLoadedVideo}
+            loading="lazy"
           />
           <video
-            src={videoSrc(currentVideo === total - 1 ? 1 : currentVideo)}
+            src={videoSrc(currentVideo === total ? 1 : currentVideo)}
             autoPlay
             loop
             muted
             className="absolute left-0 top-0 size-full object-center origin-center object-cover"
             onLoadedData={HandleLoadedVideo}
+            loading="lazy"
           />
         </div>
         <div className="absolute left-0 top-0 z-40 size-full">
@@ -195,84 +211,6 @@ const Hero = () => {
   );
 };
 
-export const VideoPreview = ({ children }) => {
-  const [isHovering, setIsHovering] = useState(false);
 
-  const sectionRef = useRef(null);
-  const contentRef = useRef(null);
-
-  // Handles mouse movement over the container
-  const handleMouseMove = ({ clientX, clientY, currentTarget }) => {
-    const rect = currentTarget.getBoundingClientRect();
-
-    const xOffset = clientX - (rect.left + rect.width / 2);
-    const yOffset = clientY - (rect.top + rect.height / 2);
-
-    if (isHovering) {
-      // Move the container slightly in the direction of the cursor
-      gsap.to(sectionRef.current, {
-        x: xOffset,
-        y: yOffset,
-        rotationY: xOffset / 2,
-        rotationX: -yOffset / 2,
-        transformPerspective: 500,
-        duration: 1,
-        ease: "power1.out",
-      });
-
-      // Move the inner content in the opposite direction for a parallax effect
-      gsap.to(contentRef.current, {
-        x: -xOffset,
-        y: -yOffset,
-        duration: 1,
-        ease: "power1.out",
-      });
-    }
-  };
-
-  useEffect(() => {
-    // Reset the position of the content when hover ends
-    if (!isHovering) {
-      gsap.to(sectionRef.current, {
-        x: 0,
-        y: 0,
-        rotationY: 0,
-        rotationX: 0,
-        duration: 1,
-        ease: "power2.inOut",
-      });
-
-      gsap.to(contentRef.current, {
-        x: 0,
-        y: 0,
-        duration: 1,
-        ease: "power2.inOut",
-      });
-    }
-  }, [isHovering]);
-
-  return (
-    <div
-      ref={sectionRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-      className="absolute z-50 size-full overflow-hidden rounded-lg"
-      style={{
-        perspective: "500px",
-      }}
-    >
-      <div
-        ref={contentRef}
-        className="origin-center rounded-lg"
-        style={{
-          transformStyle: "preserve-3d",
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-};
 
 export default Hero;

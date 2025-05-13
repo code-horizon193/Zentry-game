@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --font-zentry: 'zentry' ,sans-serif;
-  --font-general: 'general' ,sans-serif;
-  --font-circular-web: 'circular-web' ,sans-serif;
-  --font-robert-medium: 'robert-medium' ,sans-serif;
-  --font-robert-regular: 'robert-regular' ,sans-serif;
+  --font-zentry: "zentry", sans-serif;
+  --font-general: "general", sans-serif;
+  --font-circular-web: "circular-web", sans-serif;
+  --font-robert-medium: "robert-medium", sans-serif;
+  --font-robert-regular: "robert-regular", sans-serif;
   --color-yellow-10: #8e983f;
   --color-yellow-20: #edff66;
   --color-violet-10: #5724ff;
-  --color-blue-20: #4FB7DD;
+  --color-blue-20: #4fb7dd;
   --color-blue-30: #dfdff2;
   --color-blue-70: #f0f2fa;
 }
@@ -48,12 +48,12 @@ body {
   }
 }
 
-@layer utilities{
-  .absolute-center{
+@layer utilities {
+  .absolute-center {
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
   }
 
-  .mask-clip-path{
+  .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
@@ -106,7 +106,7 @@ body {
   }
 
   .about-image {
-    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-xl md:w-[30vw] ;
+    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-xl md:w-[30vw];
   }
 
   .about-subtext {

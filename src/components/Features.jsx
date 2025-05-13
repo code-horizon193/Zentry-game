@@ -1,4 +1,4 @@
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 
 const FeatCard = ({ children, classContainer = "" }) => {
@@ -21,8 +21,8 @@ const FeatCard = ({ children, classContainer = "" }) => {
     const mainTransform = `perspective(700px) rotateX(${rotatex}deg) rotateY(${rotatey}deg) scale3d(.96, .96, .96)`;
     setnewTransform(mainTransform);
 
-    const shadowX = (relativeX * 2-1) * 15;
-    const shadowY = (relativeY * 2-1) * 15;
+    const shadowX = (relativeX * 2 - 1) * 15;
+    const shadowY = (relativeY * 2 - 1) * 15;
     const shadow = `${shadowX}px ${shadowY}px 32px #656fe24f `;
     setshadoBox(shadow)
   };
@@ -38,7 +38,7 @@ const FeatCard = ({ children, classContainer = "" }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={classContainer}
-      style={{ transform: newTransform ,boxShadow: shadoBox }}
+      style={{ transform: newTransform, boxShadow: shadoBox }}
     >
       {children}
     </div>
@@ -67,7 +67,7 @@ const CardVideo = ({ src, title, caption, isCommingSoon }) => {
   return (
     <div className="relative size-full cursor-grab active:cursor-grabbing">
       <video
-        src={src} 
+        src={src}
         loop
         muted
         autoPlay
@@ -131,7 +131,7 @@ const Features = () => {
         </FeatCard>
 
         <div className="h-[135vh] w-full grid grid-cols-2 grid-rows-3 gap-8">
-          <FeatCard classContainer="border-hsla bento-tilt_1 row-span-1 md:!col-span-1 md:row-span-2">
+          <FeatCard classContainer="border-hsla bento-tilt_1 row-span-1 md:!col-span-2 md:row-span-2 lg:!col-span-1">
             <CardVideo
               src="videos/feature-2.mp4"
               title={
